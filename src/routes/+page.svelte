@@ -27,11 +27,12 @@
 
   const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   const defaultPlace = {
-    name: 'Rinconada Library',
-    address: '1213 Newell Rd, Palo Alto, CA 94303',
+    name: 'QL Maxincome Sdn bhd',
+    address: '16A, Jalan Astaka U8/83, Bukit Jelutong Business And Technology Centre, 40150 Shah Alam, Selangor',
   };
   let location: google.maps.LatLng | undefined;
   const zoom = 19;
+
 
   // Initialize app.
   let mapElement: HTMLElement;

@@ -146,6 +146,8 @@ export async function findClosestBuilding(
   const args = {
     'location.latitude': location.lat().toFixed(5),
     'location.longitude': location.lng().toFixed(5),
+    'experiments': 'EXPANDED_COVERAGE', // Add this for expanded coverage
+    'requiredQuality': 'BASE',          // Add this for expanded quality
   };
   console.log('GET buildingInsights\n', args);
   const params = new URLSearchParams({ ...args, key: apiKey });
@@ -188,7 +190,8 @@ export async function getDataLayerUrls(
     // but there is an existing MEDIUM or LOW quality, it won't return anything.
     // Here we ask for *at least* LOW quality, but if there's a higher quality available,
     // the Solar API will return us the highest quality available.
-    required_quality: 'LOW',
+    required_quality: 'BASE',
+    experiments: 'EXPANDED_COVERAGE',
   };
   console.log('GET dataLayers\n', args);
   const params = new URLSearchParams({ ...args, key: apiKey });
